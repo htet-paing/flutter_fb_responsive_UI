@@ -24,6 +24,7 @@ class _NavScreenState extends State<NavScreen> {
     Icons.ondemand_video,
     MdiIcons.accountCircleOutline,
     MdiIcons.bellOutline,
+    MdiIcons.accountGroupOutline,
     Icons.menu
   ];
 
@@ -45,7 +46,8 @@ class _NavScreenState extends State<NavScreen> {
               ),
             )
           : null,
-        body: TabBarView(
+        body: IndexedStack(
+          index: _selectedInded,
           children: _screens,
         ),
         bottomNavigationBar: !Responsive.isDesktop(context) ? CustomTabBar(
